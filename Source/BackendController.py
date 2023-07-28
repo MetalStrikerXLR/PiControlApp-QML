@@ -1,6 +1,6 @@
 import csv
-# import cups
-# import RPi.GPIO as GPIO
+import cups
+import RPi.GPIO as GPIO
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtProperty, pyqtSlot
 
 
@@ -17,12 +17,12 @@ class BackendController(QObject):
         self.m_loggedInState = False
         self.m_loggedInUser = ""
 
-        # GPIO.setmode(GPIO.BCM)
-        # GPIO.setup(1, GPIO.OUT)
-        # self.m_pwmDutyCycle = 0
-        # self.m_pwmFrequency = 1000
-        # self.m_pwm = GPIO.PWM(1, self.m_pwmFrequency)
-        # self.m_pwm.start(self.m_pwmDutyCycle)
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(1, GPIO.OUT)
+        self.m_pwmDutyCycle = 0
+        self.m_pwmFrequency = 1000
+        self.m_pwm = GPIO.PWM(1, self.m_pwmFrequency)
+        self.m_pwm.start(self.m_pwmDutyCycle)
 
         self.m_credentialFile = "./CSV/credentials.csv"
         self.m_printDataFile = "./CSV/printdata.csv"
@@ -59,10 +59,10 @@ class BackendController(QObject):
 
     @pyqtSlot(int)
     def toggleGPIO(self, pin):
-        # GPIO.setup(pin, GPIO.OUT)
-        #
-        # current_state = GPIO.input(pinr)
-        # GPIO.output(pin, not current_state)
+        GPIO.setup(pin, GPIO.OUT)
+
+        current_state = GPIO.input(pinr)
+        GPIO.output(pin, not current_state)
         pass
 
     @pyqtSlot(float)
@@ -73,11 +73,12 @@ class BackendController(QObject):
         if value > 1:
             value = 1
 
-        # self.m_pwmDutyCycle = value * 100
-        # self.m_pwm.ChangeDutyCycle(self.m_pwmDutyCycle)
+        self.m_pwmDutyCycle = value * 100
+        self.m_pwm.ChangeDutyCycle(self.m_pwmDutyCycle)
 
     @pyqtSlot()
     def executePrint(self):
+        print("Starting print job...")
         try:
             conn = cups.Connection()
             printers = conn.getPrinters()
@@ -91,12 +92,13 @@ class BackendController(QObject):
                 print("No printers found.")
         except FileNotFoundError:
             print("Error: File with content data not found.")
+        pass
 
     @pyqtSlot()
     def closeApp(self):
         # Clean up GPIO settings
-        # self.m_pwm.stop()
-        # GPIO.cleanup()
+        self.m_pwm.stop()
+        GPIO.cleanup()
         pass
 
     @pyqtProperty(str, notify=loggedInUserChanged)
