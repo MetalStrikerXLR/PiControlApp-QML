@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Pages/Components/PressableButton.qml</file>
+        <file>Pages/Components/ToggleableButton.qml</file>
+        <file>Pages/HomePage/HomePage.qml</file>
+        <file>Assets/Background/Background.png</file>
+        <file>Assets/Background/BottomStatusBarBG.png</file>
+        <file>Assets/Background/TopStatusBarBG.png</file>
+        <file>Pages/Components/TopStatusBar.qml</file>
+        <file>Pages/Components/BottomStatusBar.qml</file>
+        <file>Assets/Buttons/BtnA_Pressed.png</file>
+        <file>Assets/Buttons/BtnA_Unpressed.png</file>
+        <file>Pages/Components/ButtonGridGPIO.qml</file>
+        <file>Pages/Components/ItemGroupA.qml</file>
+        <file>Pages/Components/ItemGroupB.qml</file>
+        <file>Pages/Components/SliderGroup.qml</file>
+        <file>Pages/Components/ButtonGroup.qml</file>
+        <file>Assets/Background/InnerFrame1.png</file>
+        <file>Assets/Buttons/BtnB_Pressed.png</file>
+        <file>Assets/Buttons/BtnB_Unpressed.png</file>
+        <file>Assets/Background/InnerFrame2.png</file>
+        <file>Pages/ListPage/ListPage.qml</file>
+        <file>Pages/LoginPage/LoginPage.qml</file>
+        <file>Pages/Components/CustomButton.qml</file>
+        <file>Pages/Components/CustomTextField.qml</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,11 @@
+
+# qtcreator generated files
+*.pro.user*
+
+# Python byte code
+*.pyc
+*pycache*
+
+# Python environment
+venv
+.idea
