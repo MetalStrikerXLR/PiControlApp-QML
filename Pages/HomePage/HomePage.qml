@@ -107,7 +107,7 @@ Item {
         height: respAvg(100)
         anchors.top: gpioGroup.bottom
         anchors.left: itemGroupA.left
-        anchors.topMargin: respAvg(70)
+        anchors.topMargin: respAvg(50)
     }
 
     ButtonGroup {

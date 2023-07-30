@@ -18,7 +18,7 @@ class BackendController(QObject):
         self.m_loggedInUser = ""
 
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(1, GPIO.OUT)
+        # GPIO.setup(1, GPIO.OUT) # Could fix PWM issue
         self.m_pwmDutyCycle = 0
         self.m_pwmFrequency = 1000
         self.m_pwm = GPIO.PWM(1, self.m_pwmFrequency)
@@ -60,10 +60,8 @@ class BackendController(QObject):
     @pyqtSlot(int)
     def toggleGPIO(self, pin):
         GPIO.setup(pin, GPIO.OUT)
-
-        current_state = GPIO.input(pinr)
+        current_state = GPIO.input(pin)
         GPIO.output(pin, not current_state)
-        pass
 
     @pyqtSlot(float)
     def setPWM(self, value):
@@ -73,7 +71,7 @@ class BackendController(QObject):
         if value > 1:
             value = 1
 
-        self.m_pwmDutyCycle = value * 100
+        self.m_pwmDutyCycle = int(value * 100)
         self.m_pwm.ChangeDutyCycle(self.m_pwmDutyCycle)
 
     @pyqtSlot()
@@ -96,10 +94,8 @@ class BackendController(QObject):
 
     @pyqtSlot()
     def closeApp(self):
-        # Clean up GPIO settings
         self.m_pwm.stop()
         GPIO.cleanup()
-        pass
 
     @pyqtProperty(str, notify=loggedInUserChanged)
     def loggedInUser(self):

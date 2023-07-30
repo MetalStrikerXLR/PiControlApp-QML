@@ -33,7 +33,7 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            backend.triggerGPIO(0)
+            backend.toggleGPIO(0)
         }
     }
 
@@ -64,7 +64,7 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            backend.triggerGPIO(2)
+            backend.toggleGPIO(2)
         }
     }
 
@@ -95,7 +95,7 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            backend.triggerGPIO(3)
+            backend.toggleGPIO(3)
         }
     }
 

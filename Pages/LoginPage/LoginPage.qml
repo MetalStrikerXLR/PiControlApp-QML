@@ -11,7 +11,7 @@ Window {
     visible: true
     color: "#00000000"
 
-    flags: Qt.SplashScreen | Qt.FramelessWindowHint
+    flags: Qt.SplashScreen
 
     QtObject{
         id: internal
