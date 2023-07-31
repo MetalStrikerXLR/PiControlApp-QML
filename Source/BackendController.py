@@ -5,7 +5,6 @@ from PyQt5.QtCore import QObject, pyqtSignal, pyqtProperty, pyqtSlot
 
 
 class BackendController(QObject):
-
     loginSuccessState = pyqtSignal(bool)
     addToTable = pyqtSignal(list)
     loggedInUserChanged = pyqtSignal()
@@ -18,6 +17,7 @@ class BackendController(QObject):
         self.m_loggedInUser = ""
 
         GPIO.setmode(GPIO.BCM)
+        self.initializeGPIO()
         # GPIO.setup(1, GPIO.OUT) # Could fix PWM issue
         self.m_pwmDutyCycle = 0
         self.m_pwmFrequency = 1000
@@ -57,11 +57,31 @@ class BackendController(QObject):
         print("Login Success: ", self.m_loggedInState)
         self.loginSuccessState.emit(self.m_loggedInState)
 
+    @pyqtSlot()
+    def initializeGPIO(self):
+        GPIO.setup(0, GPIO.OUT)
+        GPIO.setup(2, GPIO.OUT)
+        GPIO.setup(3, GPIO.OUT)
+
+    @pyqtSlot()
+    def restAllGPIO(self):
+        GPIO.output(0, False)
+        GPIO.output(2, False)
+        GPIO.output(3, False)
+
     @pyqtSlot(int)
-    def toggleGPIO(self, pin):
-        GPIO.setup(pin, GPIO.OUT)
-        current_state = GPIO.input(pin)
-        GPIO.output(pin, not current_state)
+    def turnOnGPIO(self, pin):
+        if GPIO.input(pin) is True:
+            return
+
+        GPIO.output(pin, True)
+
+    @pyqtSlot(int)
+    def turnOffGPIO(self, pin):
+        if GPIO.input(pin) is False:
+            return
+
+        GPIO.output(pin, False)
 
     @pyqtSlot(float)
     def setPWM(self, value):

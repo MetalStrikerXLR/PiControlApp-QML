@@ -6,6 +6,8 @@ Item {
     width: respAvg(380)
     height: respAvg(310)
 
+    property var activeGPIO: null
+
     ToggleableButton {
         id: gpio1
         width: respAvg(60) + respHeight(glowPixel)
@@ -33,7 +35,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            backend.toggleGPIO(0)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio1
+                backend.turnOnGPIO(0)
+            }
+            else {
+                backend.turnOffGPIO(0)
+            }
         }
     }
 
@@ -64,7 +76,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            backend.toggleGPIO(2)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio2
+                backend.turnOnGPIO(2)
+            }
+            else {
+                backend.turnOffGPIO(2)
+            }
         }
     }
 
@@ -95,7 +117,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            backend.toggleGPIO(3)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio3
+                backend.turnOnGPIO(3)
+            }
+            else {
+                backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -126,7 +158,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(4)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio4
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -157,7 +199,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(5)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio5
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -188,7 +240,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(6)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio6
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -219,7 +281,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(7)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio7
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -250,7 +322,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(8)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio8
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -281,7 +363,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(9)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio9
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -312,7 +404,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(10)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio10
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -343,7 +445,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(11)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio11
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -374,7 +486,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(12)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio12
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -405,7 +527,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(13)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio13
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -436,7 +568,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(14)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio14
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -467,7 +609,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(15)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio15
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -498,7 +650,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(16)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio16
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -529,7 +691,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(17)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio17
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -560,7 +732,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(18)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio18
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -591,7 +773,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(19)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio19
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 
@@ -622,7 +814,17 @@ Item {
 
         onClicked: {
             isOn = !isOn
-            //backendController.triggerGPIO(20)
+            if (isOn == true) {
+                if (activeGPIO != null) {
+                    activeGPIO.isOn = !activeGPIO.isOn
+                    backend.restAllGPIO()
+                }
+                activeGPIO = gpio20
+                //backend.turnOnGPIO(3)
+            }
+            else {
+                //backend.turnOffGPIO(3)
+            }
         }
     }
 }
