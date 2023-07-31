@@ -18,7 +18,6 @@ class BackendController(QObject):
 
         GPIO.setmode(GPIO.BCM)
         self.initializeGPIO()
-        # GPIO.setup(1, GPIO.OUT) # Could fix PWM issue
         self.m_pwmDutyCycle = 0
         self.m_pwmFrequency = 1000
         self.m_pwm = GPIO.PWM(1, self.m_pwmFrequency)
@@ -60,6 +59,7 @@ class BackendController(QObject):
     @pyqtSlot()
     def initializeGPIO(self):
         GPIO.setup(0, GPIO.OUT)
+        GPIO.setup(1, GPIO.OUT)
         GPIO.setup(2, GPIO.OUT)
         GPIO.setup(3, GPIO.OUT)
 
