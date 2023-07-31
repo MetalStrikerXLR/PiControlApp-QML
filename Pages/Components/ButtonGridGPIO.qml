@@ -44,6 +44,7 @@ Item {
                 backend.turnOnGPIO(0)
             }
             else {
+                activeGPIO = null
                 backend.turnOffGPIO(0)
             }
         }
@@ -85,6 +86,7 @@ Item {
                 backend.turnOnGPIO(2)
             }
             else {
+                activeGPIO = null
                 backend.turnOffGPIO(2)
             }
         }
@@ -126,6 +128,7 @@ Item {
                 backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 backend.turnOffGPIO(3)
             }
         }
@@ -167,6 +170,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
@@ -208,6 +212,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
@@ -249,6 +254,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
@@ -290,6 +296,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
@@ -331,6 +338,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
@@ -372,6 +380,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
@@ -413,6 +422,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
@@ -454,6 +464,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
@@ -495,6 +506,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
@@ -536,6 +548,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
@@ -577,6 +590,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
@@ -618,6 +632,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
@@ -659,6 +674,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
@@ -700,6 +716,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
@@ -741,6 +758,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
@@ -782,6 +800,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
@@ -823,6 +842,7 @@ Item {
                 //backend.turnOnGPIO(3)
             }
             else {
+                activeGPIO = null
                 //backend.turnOffGPIO(3)
             }
         }
