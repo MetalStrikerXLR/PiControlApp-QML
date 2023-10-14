@@ -1,0 +1,10 @@
+{
+    "files": [
+        "CSV/credentials.csv",
+        "CSV/printdata.csv",
+        "README.md",
+        "Source/BackendController.py",
+        "main.py",
+        "qml.qrc"
+    ]
+}
